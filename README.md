@@ -1,6 +1,8 @@
 0x16. C - Simple Shell
 
-This is a README.md for simple shell project by Juliet Ajah:
+This is a README.md for simple shell project by Juliet Ajah.
+This project factors basic functionality of a traditional Unix-like command line user interface. Standard functions and system calls used includes:
+access, execve, exit, fork, free, fstat, getline, malloc, perror, signed, stat, wait, write.
 
 Project Task:
 
