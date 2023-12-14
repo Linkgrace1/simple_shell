@@ -7,7 +7,7 @@
  * Return: exits with a given exit status
  * (0) if info.argv[0] != "exit"
  */
-int _myexit(info_t *info)
+int _myexit(ino_t *info)
 {
 	int exitcheck;
 
@@ -18,8 +18,8 @@ int _myexit(info_t *info)
 		{
 			info->status = 2;
 			print_error(info, "Illegal number: ");
-			_eputs(info->argv[1]);
-			_eputchar('\n');
+			_puts(info->argv[1]);
+			putchar('\n');
 			return (1);
 		}
 		info->err_num = _erratoi(info->argv[1]);
@@ -35,7 +35,7 @@ int _myexit(info_t *info)
  * constant function prototype.
  * Return: Always 0
  */
-int _mycd(info_t *info)
+int _mycd(ino_t *info)
 {
 	char *s, *dir, buffer[1024];
 	int chdir_ret;
@@ -69,7 +69,7 @@ int _mycd(info_t *info)
 	if (chdir_ret == -1)
 	{
 		print_error(info, "can't cd to ");
-		_eputs(info->argv[1]), _eputchar('\n');
+		_puts(info->argv[1]), _putchar('\n');
 	}
 	else
 	{
@@ -85,7 +85,7 @@ int _mycd(info_t *info)
  * constant function prototype.
  * Return: Always 0
  */
-int _myhelp(info_t *info)
+int _myhelp(ino_t *info)
 {
 	char **arg_array;
 
